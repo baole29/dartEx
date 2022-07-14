@@ -1,0 +1,170 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "01 reversestring",
+            "cwd": "super-basic\\01 reversestring",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "02 palindrome",
+            "cwd": "super-basic\\02 palindrome",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "03 reverseint",
+            "cwd": "super-basic\\03 reverseint",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "04 maxchar",
+            "cwd": "super-basic\\04 maxchar",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "05 fizzbuzz",
+            "cwd": "super-basic\\05 fizzbuzz",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "06 chunk",
+            "cwd": "super-basic\\06 chunk",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "07 anagrams",
+            "cwd": "super-basic\\07 anagrams",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "08 capitalize",
+            "cwd": "super-basic\\08 capitalize",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "09 steps",
+            "cwd": "super-basic\\09 steps",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "10 pyramid",
+            "cwd": "super-basic\\10 pyramid",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "11 vowels",
+            "cwd": "super-basic\\11 vowels",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "12 matrix",
+            "cwd": "super-basic\\12 matrix",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "13 fib",
+            "cwd": "super-basic\\13 fib",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "14 queue",
+            "cwd": "super-basic\\14 queue",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "15 weave",
+            "cwd": "super-basic\\15 weave",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "16 stack",
+            "cwd": "super-basic\\16 stack",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "17 qfroms",
+            "cwd": "super-basic\\17 qfroms",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "18 linkedlist",
+            "cwd": "super-basic\\18 linkedlist",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "19 midpoint",
+            "cwd": "super-basic\\19 midpoint",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "19a fromlast",
+            "cwd": "super-basic\\19a fromlast",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "20 circular",
+            "cwd": "super-basic\\20 circular",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "21 tree",
+            "cwd": "super-basic\\21 tree",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "22 levelwidth",
+            "cwd": "super-basic\\22 levelwidth",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "23 bst",
+            "cwd": "super-basic\\23 bst",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "24 validate",
+            "cwd": "super-basic\\24 validate",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "25 events",
+            "cwd": "super-basic\\25 events",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "26 sorting",
+            "cwd": "super-basic\\26 sorting",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
