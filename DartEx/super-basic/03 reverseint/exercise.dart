@@ -9,13 +9,7 @@
 //   reverseInt(-90) === -9
 
 int reverseInt(int n) {
-  String input;
- n>0 ?  input=n.toString() : input=(-n).toString();
-  String result="";
-  for(var i = 0; i<input.length;i++){
-    result = result.padLeft(i+1,input[i]);
-  }
-  return n>0 ? int.parse(result) : -int.parse(result);
+  return n>0 ? int.parse(reverse(n.toString())) : -int.parse(reverse((-n).toString()));
 }
 
 String reverse(String input) {

@@ -23,9 +23,18 @@ enum Direction {
 }
 
 class Matrix2d {
-  
+  int size;
+  Matrix2d(this.size);
+  var right = Direction.right;
 }
 
 List<List<int>> matrix(int size) {
-  
+  Matrix2d matrix2d = Matrix2d(size);
+  matrix2d.runtimeType;
+}
+
+
+void main(){
+  var matrixs = matrix(1);
+  print(matrixs);
 }

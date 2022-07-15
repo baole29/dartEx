@@ -15,5 +15,13 @@
 import 'stack.dart';
 
 class Queue {
+  Stack _stack1 = Stack();
+  Stack _stack2 = Stack();
+
+  void add(dynamic value){
+    _stack1.push(value);
+  }
+
   
+
 }

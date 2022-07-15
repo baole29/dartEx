@@ -17,9 +17,16 @@
 import 'dart:math';
 
 void pyramid(int lineCount, {Function(String) printForUnitTest}) {
-  
+  int count = 1;
+  while(lineCount>0){
+    printForUnitTest(pyramidLine(lineCount-1, count));
+    count+=2;
+    lineCount-=1;
+  }
 }
 
 String pyramidLine(int level, int height) {
-  
+  return ' '*level+'#'*height+' '*level;
 }
+
+void main()=> pyramid(8);

@@ -18,9 +18,15 @@
 //       '####'
 
 void steps(int lineCount, {Function(String) printForUnitTest}) {
-  
+  for(int i =1; i<=lineCount;i++){
+    printForUnitTest(hashLine(i, lineCount-i));
+  }
 }
 
 String hashLine(int lineCount, int lineNr) {
-  
+  return '#'*lineCount+' '* lineNr;
+}
+
+void main(){
+   steps(4);
 }

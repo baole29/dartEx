@@ -11,19 +11,24 @@
 
 bool anagrams(String stringA, String stringB) {
 
-  return stringA.toLowerCase()==stringB.toLowerCase();
+  return filter(sortCharsInString(stringA.toLowerCase().trim()))==filter(sortCharsInString(stringB.toLowerCase().trim()));
 }
 
-RegExp regExp = new RegExp(r"\w");
+RegExp regExp = new RegExp(r"\w+");
 
 String filter(String input) {
-  return "One line only !!!";
+
+  //return "One line only !!!";
+
+  return regExp.stringMatch(input);
 }
 
 String sortCharsInString(String input) {
-  
+  List<String> result = input.split('');
+  result.sort();
+  return result.join();
 }
 
 void main(){
-print(anagrams("stringA", "stringa"));
+  print(filter("input"));
 }

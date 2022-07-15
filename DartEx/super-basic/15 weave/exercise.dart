@@ -24,10 +24,28 @@
 
 import 'queue.dart';
 
-class ProxyQueue {
+class ProxyQueue extends Queue{
   
 }
 
-weave(Queue sourceOne, Queue sourceTwo) {
-  return "One line only !!!";
+Queue weave(Queue sourceOne, Queue sourceTwo) {
+  return sourceOne.add;
+ // return "One line only !!!";
+}
+
+
+void main(){
+  var queueOne = Queue();
+   queueOne.add(1);
+   queueOne.add(2);
+   var queueTwo = Queue();
+   queueTwo.add('Hi');
+   queueTwo.add('There');
+   Queue q = weave(queueOne, queueTwo);
+   print(queueTwo.remove());
+   print(queueTwo.remove()); 
+   print(q.remove());// 1
+  //  q.remove() ;// 'Hi'
+  //  q.remove(); // 2
+  //  q.remove(); // 'There'
 }
