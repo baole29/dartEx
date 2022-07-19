@@ -22,30 +22,24 @@
 //    q.remove() // 2
 //    q.remove() // 'There'
 
+
 import 'queue.dart';
 
-class ProxyQueue extends Queue{
-  
+class ProxyQueue {
+  Queue queueOne = Queue();
+  Queue queueTwo = Queue();
+  Queue combine(queueOne, queueTwo) {
+    Queue queueResult = Queue();
+    while (queueOne.peek() != null || queueTwo.peek() != null) {
+      queueResult.add(queueOne.remove());
+      queueResult.add(queueTwo.remove());
+    }
+    return queueResult;
+  }
 }
 
 Queue weave(Queue sourceOne, Queue sourceTwo) {
-  return sourceOne.add;
- // return "One line only !!!";
-}
+  // return "One line only !!!";
 
-
-void main(){
-  var queueOne = Queue();
-   queueOne.add(1);
-   queueOne.add(2);
-   var queueTwo = Queue();
-   queueTwo.add('Hi');
-   queueTwo.add('There');
-   Queue q = weave(queueOne, queueTwo);
-   print(queueTwo.remove());
-   print(queueTwo.remove()); 
-   print(q.remove());// 1
-  //  q.remove() ;// 'Hi'
-  //  q.remove(); // 2
-  //  q.remove(); // 'There'
+  return ProxyQueue().combine(sourceOne, sourceTwo);
 }

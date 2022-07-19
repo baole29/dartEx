@@ -10,7 +10,7 @@
 
 
 class Queue {
-  var _queue = List.generate(100,((index) => index));
+  var _queue = List<dynamic>.generate(100,((index) => index));
  int _front = -1;
   int _rear = -1;
 

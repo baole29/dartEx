@@ -1,5 +1,5 @@
 class Stack {
-  var _stack = List.generate(100,((index) => index));
+  var _stack = List<dynamic>.generate(100,((index) => index));
   int _top = -1;
   int _bottom = -1;
 
@@ -22,6 +22,15 @@ class Stack {
   }
 
   dynamic peek(){
-    return _stack[_top];
+    return  _top!=-1 ?_stack[_top]:null;
   }
+}
+
+void main(){
+  Stack stack = Stack();
+
+  stack.push(1);
+  print(stack.peek());
+  print(stack.pop());
+  print(stack.peek());
 }

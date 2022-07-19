@@ -5,14 +5,14 @@
 // removing it.
 
 class Queue {
-  var _queue = List.generate(100, ((index) => index));
+  var _queue = List<dynamic>.generate(100, ((index) => index));
   int _front = -1;
   int _rear = -1;
 
   void add(dynamic value) {
     if (_front == -1) _front = 0;
     _rear += 1;
-    _queue[_rear] = value;
+    if(_rear<_queue.length) _queue[_rear] = value ;
   }
 
   dynamic remove() {
@@ -22,7 +22,7 @@ class Queue {
     return result;
   }
 
-  dynamic peek() {
-    return _queue[_front];
+dynamic peek() {
+    return _front ==-1|| _front>_rear?null: _queue[_front];
   }
 }
