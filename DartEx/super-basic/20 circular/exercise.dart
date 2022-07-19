@@ -15,5 +15,5 @@
 import 'linked_list.dart';
 
 bool circular(LinkedList list) {
-  
+  List<List<dynamic>> edge = List<List<dynamic>>;
 }
