@@ -155,22 +155,15 @@ class LinkedList extends Iterable {
 
 class LinkedListIterator implements Iterator {
   LinkedList linkedList = LinkedList();
-
   LinkedListIterator(LinkedList linkedList){
     this.linkedList = linkedList;
   }
-  
   int position  = -1;
-
-
   @override
   get current => linkedList.getAt(position);
-  
   @override
   bool moveNext() {
     position ++;
     return (position <linkedList.size());
   }
-
-
 }

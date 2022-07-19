@@ -11,13 +11,36 @@
 // function that gets called with each element in the tree
 
 class Node {
-  
-}
+  dynamic data;
+  List<Node> children = [];
+  Node(this.data, [children]){
+    if(children!=null){
+      this.children = children;
+    }else{
+      this.children = [];
+    }
+  }
+
+
+  void add(dynamic data){
+    children.add(Node(data));
+  }
+
+  dynamic remove(dynamic data){
+    for(var node in children){
+      if(node.data == data)
+        return children.remove(node);
+    }
+  }
+
+} 
 
 class Tree {
   Node root;
 
   _traverseBF(Node baseNode, Function(Node) fn) {
+    fn(baseNode);
+
     
   }
 
@@ -26,10 +49,28 @@ class Tree {
   }
 
   traverseBreadthFirst(Function(Node) fn) {
+    List<Node> listNodeIn = [root];
+    List<Node> listNodeOut = [];
     
+      _traverseBF(listNodeIn.first, (p0) => fn(p0));
   }
 
   traverseDepthFirst(Function(Node) fn) {
     
   }
+}
+
+void main(){
+  List<String> letters = [];
+      var t = Tree();
+      t.root = Node('a');
+      t.root.add('b');
+      t.root.add('c');
+      t.root.children[0].add('d');
+
+      t.traverseBreadthFirst((node) {
+        letters.add(node.data);
+      });
+      print(letters);
+     
 }

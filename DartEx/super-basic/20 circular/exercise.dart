@@ -15,5 +15,31 @@
 import 'linked_list.dart';
 
 bool circular(LinkedList list) {
-  List<List<dynamic>> edge = List<List<dynamic>>;
+  bool result = false;
+  Node nextNode = list.head;
+  List<Node> listNode= [];
+  while(!result){
+    listNode.add(nextNode);
+    nextNode = nextNode.next;
+    for(int i=0; i<listNode.length;i++){
+      if(nextNode == listNode[i])
+        result = true;
+      if(nextNode ==null)
+        return false;
+    }
+  }
+  return result;
+}
+
+void main(){
+  var l = new LinkedList();
+    var a = new Node(11);
+    var b = new Node(22);
+    var c = new Node(33);
+
+    l.head = a;
+    a.next = b;
+    b.next = c;
+    c.next = null;
+    print(circular(l));
 }
