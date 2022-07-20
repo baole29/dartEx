@@ -15,5 +15,10 @@
 import 'linked_list.dart';
 
 Node midpoint(LinkedList list) {
-  
+  Node node;
+  // I edited moveNext
+  for (var element in list) {
+    node = element;
+  }
+  return node;
 }

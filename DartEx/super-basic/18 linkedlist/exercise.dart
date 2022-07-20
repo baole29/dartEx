@@ -2,8 +2,6 @@
 // Implement classes Node and Linked Lists
 // See 'directions' document
 
-import 'package:test/expect.dart';
-
 class Node {
   int data;
   Node next;
@@ -151,28 +149,21 @@ class LinkedList extends Iterable {
     }
   }
 
-  forIn(Function(Node node, LinkedList linkedList) fn){
-    LinkedList linkedList;
-    Node nextNode = head;
-    while (nextNode != null) {
-     fn(nextNode, linkedList);
-     nextNode = nextNode.next;
-      
-    }
-  }
-
   @override
   Iterator get iterator => LinkedListIterator(this);
 }
 
 class LinkedListIterator implements Iterator {
-  LinkedListIterator(LinkedList linkedList);
-
+  LinkedList linkedList = LinkedList();
+  LinkedListIterator(LinkedList linkedList){
+    this.linkedList = linkedList;
+  }
+  int position  = -1;
   @override
-  get current => throw UnimplementedError();
-
+  get current => linkedList.getAt(position);
   @override
   bool moveNext() {
-    throw UnimplementedError();
+    position ++;
+    return (position <linkedList.size());
   }
 }
