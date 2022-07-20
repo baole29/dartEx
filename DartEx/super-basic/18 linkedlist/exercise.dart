@@ -176,20 +176,3 @@ class LinkedListIterator implements Iterator {
     throw UnimplementedError();
   }
 }
-
-
-void main(){
-var l = new LinkedList();
-    l.insertLast(1);
-    l.insertLast(2);
-    l.insertLast(3);
-    l.insertLast(4);
-    l.insertAt(99, 1);
-
-print('list size:'+l.size().toString());
-  for(int i =0; i<l.size();i++){
-    print(l.getAt(i).data);
-  }
-
-  
-}
