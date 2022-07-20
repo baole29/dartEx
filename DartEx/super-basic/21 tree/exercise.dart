@@ -13,64 +13,61 @@
 class Node {
   dynamic data;
   List<Node> children = [];
-  Node(this.data, [children]){
-    if(children!=null){
+  Node(this.data, [children]) {
+    if (children != null) {
       this.children = children;
-    }else{
+    } else {
       this.children = [];
     }
   }
 
-
-  void add(dynamic data){
+  void add(dynamic data) {
     children.add(Node(data));
   }
 
-  dynamic remove(dynamic data){
-    for(var node in children){
-      if(node.data == data)
-        return children.remove(node);
+  dynamic remove(dynamic data) {
+    for (var node in children) {
+      if (node.data == data) return children.remove(node);
     }
   }
-
-} 
+}
 
 class Tree {
   Node root;
 
   _traverseBF(Node baseNode, Function(Node) fn) {
-    fn(baseNode);
+    List<Node> listNodeIn = [root];
+    List<Node> listNodeOut = [];
 
-    
+    while (listNodeIn.length != 0) {
+      if (listNodeIn.first.children != null) {
+        for (int i = 0; i < listNodeIn.first.children.length; i++) {
+          listNodeIn.add(listNodeIn.first.children[i]);
+        }
+      }
+      listNodeOut.add(listNodeIn.removeAt(0));
+    }
+
+    for (int i = 0; i < listNodeOut.length; i++) {
+      fn(listNodeOut[i]);
+    }
   }
 
   _traverseDF(Node baseNode, Function(Node) fn) {
+    if (baseNode == null) return;
+      fn(baseNode);
+      int childrenLength = baseNode.children.length;
+      if(childrenLength==0) return;
+      for(int i = 0; i<childrenLength;i++)
+        _traverseDF(baseNode.children[i], fn);
     
   }
 
   traverseBreadthFirst(Function(Node) fn) {
-    List<Node> listNodeIn = [root];
-    List<Node> listNodeOut = [];
-    
-      _traverseBF(listNodeIn.first, (p0) => fn(p0));
+    _traverseBF(root, (p0) => fn(p0));
   }
 
   traverseDepthFirst(Function(Node) fn) {
-    
+    _traverseDF(root, (p0) => fn(p0));
   }
-}
-
-void main(){
-  List<String> letters = [];
-      var t = Tree();
-      t.root = Node('a');
-      t.root.add('b');
-      t.root.add('c');
-      t.root.children[0].add('d');
-
-      t.traverseBreadthFirst((node) {
-        letters.add(node.data);
-      });
-      print(letters);
-     
 }

@@ -12,5 +12,41 @@
 // and return the Node in the tree with the same value.
 
 class Node {
-  
+  int data;
+  Node left, right;
+  Node(this.data);
+  void insert(int data) {
+    Node root = this;
+    Node parent;
+    Node currentNode = root;
+    if (root != null) {
+      while (currentNode != null) {
+        parent = currentNode;
+        if (data > currentNode.data) {
+          currentNode = currentNode.right;
+        } else {
+          currentNode = currentNode.left;
+        }
+      }
+      if (data > parent.data) {
+        p = Node(data);
+      } else {
+        currentNode = Node(data);
+      }
+    } else {
+      if (data > this.data) {
+        right = Node(data);
+      } else {
+        left = Node(data);
+      }
+    }
+  }
+  Node contains(int data){}
+}
+ 
+void main(){
+  var node = new Node(10);
+    node.insert(5);
+    node.insert(15);
+    node.insert(17);
 }
