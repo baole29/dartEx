@@ -19,9 +19,7 @@ class Node {
   Node(this.data, [this.left = null, this.right = null]);
   void insert(int data) {
     Node root = this;
-    if (root == null) {
-      root = Node(data);
-    } else {
+    
       Node parent, currentNode = root;
       while (true) {
         parent = currentNode;
@@ -38,7 +36,7 @@ class Node {
             return;
           }
         }
-      }
+      
     }
   }
 
