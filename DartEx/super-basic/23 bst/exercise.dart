@@ -11,42 +11,53 @@
 // class.  Contains should accept a 'data' argument
 // and return the Node in the tree with the same value.
 
+import 'package:test/expect.dart';
+
 class Node {
   int data;
   Node left, right;
-  Node(this.data);
+  Node(this.data, [this.left = null, this.right = null]);
   void insert(int data) {
     Node root = this;
-    Node parent;
-    Node currentNode = root;
-    if (root != null) {
-      while (currentNode != null) {
+    if (root == null) {
+      root = Node(data);
+    } else {
+      Node parent, currentNode = root;
+      while (true) {
         parent = currentNode;
-        if (data > currentNode.data) {
+        if (data > parent.data) {
           currentNode = currentNode.right;
+          if (currentNode == null) {
+            parent.right = Node(data);
+            return;
+          }
         } else {
           currentNode = currentNode.left;
+          if (currentNode == null) {
+            parent.left = Node(data);
+            return;
+          }
         }
-      }
-      if (data > parent.data) {
-        p = Node(data);
-      } else {
-        currentNode = Node(data);
-      }
-    } else {
-      if (data > this.data) {
-        right = Node(data);
-      } else {
-        left = Node(data);
       }
     }
   }
-  Node contains(int data){}
+
+  Node contains(int data) {
+    Node currentNode = this;
+    while(currentNode!=null&&currentNode.data!=data){
+      if(data>currentNode.data)
+        currentNode = currentNode.right;
+      else
+        currentNode = currentNode.left;
+    }
+    return currentNode == this? null:currentNode;
+  }
 }
- 
-void main(){
+
+void main() {
   var node = new Node(10);
-    node.insert(5);
-    node.insert(15);
-    node.insert(17);
+  node.insert(5);
+  node.insert(15);
+  node.insert(17);
+  print(node.contains(18));
 }
