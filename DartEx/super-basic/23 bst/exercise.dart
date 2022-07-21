@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // --- Directions
 // 1) Implement the Node class to create
 // a binary search tree.  The constructor
@@ -13,7 +11,6 @@
 // class.  Contains should accept a 'data' argument
 // and return the Node in the tree with the same value.
 
-import 'package:test/expect.dart';
 
 class Node {
   int data;
@@ -21,7 +18,6 @@ class Node {
   Node(this.data, [this.left = null, this.right = null]);
   void insert(int data) {
     Node root = this;
-    
       Node parent, currentNode = root;
       while (true) {
         parent = currentNode;
@@ -61,4 +57,3 @@ void main() {
   node.insert(17);
   print(node.contains(18));
 }
->>>>>>> cf90d9f6351f72342be9e1e6f4a79544eaca94f7

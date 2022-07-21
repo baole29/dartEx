@@ -173,6 +173,6 @@ class LinkedListIterator implements Iterator {
   @override
   bool moveNext() {
     position ++;
-    return position <linkedList.size()~/2;
+    return position <linkedList.size();
   }
 }

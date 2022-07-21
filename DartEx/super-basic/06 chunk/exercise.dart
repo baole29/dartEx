@@ -25,7 +25,3 @@ List<List<int>> chunk(List<int> array, size) {
   
   return listInt;
 }
-
-void main(){
-  print(chunk([1,2,3,4,5,6,7,8,9,10], 2));
-}

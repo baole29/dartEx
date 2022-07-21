@@ -31,23 +31,3 @@ class Queue {
     return _stackOut.pop();
   }
 }
-
-// void main(){
-//   Queue queue = Queue();
-//   Stack stack = Stack();
-
-//   stack.push(1);
-//   stack.push(2);
-//   stack.push(3);
-
-
-//   print(stack.pop());
-
-//   queue.add(1);
-//   queue.add(2);
-//   queue.add(3);
-//   queue.add(4);
-//   print(queue.remove());
-//   print(queue.remove());
-//   print(queue.remove());
-// }

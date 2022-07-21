@@ -28,7 +28,3 @@ String sortCharsInString(String input) {
   result.sort();
   return result.join();
 }
-
-void main(){
-  print(filter("input"));
-}

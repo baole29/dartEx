@@ -31,15 +31,3 @@ bool circular(LinkedList list) {
   return result;
 }
 
-void main(){
-  var l = new LinkedList();
-    var a = new Node(11);
-    var b = new Node(22);
-    var c = new Node(33);
-
-    l.head = a;
-    a.next = b;
-    b.next = c;
-    c.next = null;
-    print(circular(l));
-}

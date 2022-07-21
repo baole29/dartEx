@@ -28,5 +28,3 @@ void pyramid(int lineCount, {Function(String) printForUnitTest}) {
 String pyramidLine(int level, int height) {
   return ' '*level+'#'*height+' '*level;
 }
-
-void main()=> pyramid(8);

@@ -15,7 +15,3 @@ int reverseInt(int n) {
 String reverse(String input) {
   return input.split('').reversed.join();
 }
-
-void main(){
-  print(reverseInt(-54));
-}

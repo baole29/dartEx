@@ -27,7 +27,3 @@ fizzBuzz(maxN, {Function(String) printForUnitTest}) {
     }
   }
 }
-
-void main(){
-  fizzBuzz(15);
-}

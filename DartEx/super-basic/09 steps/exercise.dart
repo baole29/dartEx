@@ -26,7 +26,3 @@ void steps(int lineCount, {Function(String) printForUnitTest}) {
 String hashLine(int lineCount, int lineNr) {
   return '#'*lineCount+' '* lineNr;
 }
-
-void main(){
-   steps(4);
-}

@@ -18,10 +18,10 @@ Node fromLast_cheating(LinkedList list, int n) {
 }
 
 Node fromLast(LinkedList list, int n) {
-  Node node;
-  // I edit moveNext
-  for (var element in list) {
-    node = element;
+  LinkedList lists = list;
+  while(n>0){
+    lists.removeLast();
+    n--;
   }
-  return node;
+  return lists.getLast();
 }

@@ -15,10 +15,12 @@
 import 'linked_list.dart';
 
 Node midpoint(LinkedList list) {
-  Node node;
-  // I edited moveNext
-  for (var element in list) {
-    node = element;
+  Node slowNode = list.head;
+  Node fastNode = slowNode.next;
+  while (fastNode != null) {
+    if(fastNode.next==null) return slowNode;
+    slowNode = slowNode.next;
+    fastNode = fastNode.next.next;
   }
-  return node;
+  return slowNode;
 }

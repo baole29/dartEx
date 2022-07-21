@@ -18,8 +18,3 @@ String capitalize(String input) {
   return result.join();
 }
 
-// void main(){
-//   String input = "hello me";
-//   capitalize(input);
-
-// }

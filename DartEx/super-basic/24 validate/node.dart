@@ -2,36 +2,26 @@ class Node {
   int data;
   Node left;
   Node right;
-  Node(this.data,[this.left=null,]);
+  Node(this.data,[this.left=null,this.right=null]);
 
   _addLeaf(Node node, int data) {
-    
-      Node current = node;
-      print(node);
-      if(current==null){
-        current = Node(data);
-      }else{
-        current.insert(data);
+      if(this==null){
+        Node(data);
       }
+      else{
+        if(node.data>data){
+          node.left==null?
+          node.left = Node(data):
+          node.left.insert(data);
+        }else{
+          node.right==null?
+          node.right = Node(data):
+          node.right.insert(data);
+        }
+      } 
     }
 
-
   void insert(int data) {
-    Node root = this;
-      if(data>root.data)
-        root._addLeaf(root.right, data);
-      else{
-        root._addLeaf(root.left, data);
-      }
-
+    _addLeaf(this, data);
   }
-}
-
-void main(){
-  var n = Node(10);
-    n.insert(5);
-    n.insert(15);
-    n.insert(0);
-    n.insert(20);
-    print(n.left);
 }
