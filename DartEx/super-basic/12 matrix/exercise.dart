@@ -23,17 +23,57 @@ enum Direction {
 }
 
 class Matrix2d {
- int size;
- Matrix2d(){
-  matrix(size);
- }
+ late int size;
  
 }
 
 List<List<int>> matrix(int size) {
-  
+  int top = 0, bottom = size-1, left = 0, right = size-1;
+  int value = 1;
+  List<List<int>> resultMatrix = 
+    List.generate(size, (i) => List.generate(size, (i) => i,), growable: false);
+
+  while(true){
+    if(left>right)
+      break;
+      //print top
+    for(int i = left; i<=right;i++){
+      resultMatrix[top][i] = value++;
+    }
+    top++;
+
+    if(top>bottom)
+      break;
+      //print right
+    for(int i =top; i<=bottom;i++){
+      resultMatrix[i][right] = value++;
+    }
+    right--;
+
+    if(left>right)
+      break;
+      //print bottom
+    for(int i =right; i>=left;i--){
+      resultMatrix[bottom][i] = value++;
+    }
+    bottom--;
+
+    if(top>bottom)
+      break;
+      //print left
+    for(int i =bottom; i>=top;i--){
+      resultMatrix[i][left] = value++;
+    }
+    left++;
+  }
+
+return resultMatrix;
 }
 
 
 void main(){
+  int size = 4;
+  for(int i = 0; i<size;i++){
+    print(matrix(size)[i]);
+  }
 }
